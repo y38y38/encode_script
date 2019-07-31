@@ -3,7 +3,7 @@ INPUT_DIR=$HOME/yuv_file/
 VVC_DIR=$HOME/vtm/VVCSoftware_VTM-VTM-5.2/
 FRAME_NUM=300
 QP=35
-touch ./${OUTPUT_DIR}/result.txt
+cat /dev/null > ./${OUTPUT_DIR}/result.txt
 for file in $INPUT_DIR/*.yuv
 do
 
@@ -22,6 +22,6 @@ do
     echo -n ',' >> ./${OUTPUT_DIR}/result.txt
     cat  ./${OUTPUT_DIR}/${OUTPUT_FILE}_size.txt | tr -d '\n' >> ./${OUTPUT_DIR}/result.txt
     echo -n ',' >> ./${OUTPUT_DIR}/result.txt
-    cat  ./${OUTPUT_DIR}/${OUTPUT_FILE}_encode_time.txt | tr -d '\n' >> ./${OUTPUT_DIR}/result.txt
+    cat  ./${OUTPUT_DIR}/${OUTPUT_FILE}_encode_time.txt  >> ./${OUTPUT_DIR}/result.txt
 
 done
